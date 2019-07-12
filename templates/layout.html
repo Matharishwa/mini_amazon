@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{%if title %}
+		<title>{{title}}</title>
+		{% else %}
+		<title>Amazon</title>
+		{% endif %}
+		
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+	</head>
+	<body>
+		<center><p>Welcome to mini amazon</p></center>
+		<p>This is the home page</p>
+		
+		{% block body %}
+		
+		{% endblock body %}
+	</body>
+
+	<footer>
+		<p>&copy; Mini Amazon 2019</p>
+		
+		
+		{% if title=="home" %}
+		
+		<a href="/about">About</a><br>
+		<a href="/contact">contact</a><br>
+		
+
+		{% elif title=="contact" %}
+		
+		<a href="/">home</a><br>
+		<a href="/about">about</a><br>
+		
+		{% elif title=="about" %}
+		
+		<a href="/">home</a><br>
+		<a href="/contact">contact</a><br>
+		{% endif %}
+
+		{% if session %}
+		<a href="/logout">logout</a>
+		{% endif %}
+		<!-- {% if title!="about" %}
+		<a href="/home">home</a><br>
+		
+		{% endif %}
+
+		{% if title!="contact" %}
+		<a href="/home">home</a><br>
+		
+		{% endif %} -->
+	</footer>	
+
+
+</html>
